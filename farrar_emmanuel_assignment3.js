@@ -5,7 +5,7 @@ SDI Project 3
 */
 
 //GLOBAL VARIABLES
-var jobName = ["Paladin", "Warrior", "Dragoon", "Monk", "Bard", "Ninja", "Summoner", "Black Mage", "White Mage", "Scholar"];
+var jobName = ["Paladin", "Warrior", "Dragoon", "Monk", "Ninja", "Summoner", "Black Mage", "White Mage", "Scholar"];
 
 
 //FUNCTIONS
@@ -45,7 +45,15 @@ if (youbard === true)
 };
 
 //number function
-var myNumFunction
+var myNumFunction = function (coilattempts, coilkills)
+{
+var attempts = coilattempts;
+var confirmKill = coilkills;
+
+//add math if not more than 5 confirm kills
+console.log("I see you have attempted this coil turn " +attempts 
++ " and have killed the boss " + confirmKill +" times.");
+};
 
 //MAIN CODE
 
@@ -54,3 +62,8 @@ myStrFunction("Novus", "Yes");    // to test string function
 myStrFunction("Animus", "Yes");   // to test string function
 myBooFuncation(true);             // to test boolean function
 console.log ("The bard is okay with kitting: " + myConfirm);  //to test return for boolean function
+myNumFunction(10,2);
+
+//add Bard via push method
+
+//tweak JSON data to reflect weapon, playername, and something else
