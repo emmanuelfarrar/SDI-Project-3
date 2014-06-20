@@ -22,7 +22,7 @@ var myProcedure = function (jobArray)
 	console.log("The array length is currently at: " + jobArray.length);	
 };
 
-//string function to identify weapon type and if coil turn has been done before.
+//string function to identify weapon type
 var myStrFunction = function (job, theArray)
 {
 var wepLength = theArray.length;
@@ -40,7 +40,6 @@ for (var i = 0; i < jobName.length; i++)
 //boolean function
 var myBooFunction = function (youbard, weapon)
 {
-//make this the nested conditional function
  if(youbard === true && weapon === "Novus")
 {
 	var myConfirm = confirm("If you are a bard are you okay with kiting the adds?");
@@ -113,13 +112,16 @@ console.log("The team has been working hard and running this coil instance sever
 numReturn = myNumFunction(3,2);
 
 console.log("Lets see what the array will look like is we add a Bard to the party.");
+
 //using the push method
 jobName.push ("Bard");     //add Bard via push method
+
 console.log(jobName);
 console.log("The new array length is currently at: " + jobName.length);
 
 console.log("Now we need to track the players and loot request that have been made so far.");
-console.log("Here is a table of the players that have made a request for drops in the turn and what drops they want.")
+console.log("Here is a table of the players that have made a request for drops in the turn and what drops they want.");
+
 //call getJson
 getJson(json);
 
