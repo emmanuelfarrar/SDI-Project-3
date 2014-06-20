@@ -13,7 +13,7 @@ var json = 	{
 			},
 			{
 				"name": "Tyon",
-				"coilDrop": "Necklace"
+				"coilDrop": "necklace"
 			},
 			{
 				"name": "Nesfer",
@@ -21,7 +21,7 @@ var json = 	{
 			},
 			{
 				"name": "Ashara",
-				"coilDrop": "braclet"
+				"coilDrop": "bracelet"
 			}
 		]
 	};
