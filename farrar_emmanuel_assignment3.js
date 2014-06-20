@@ -120,6 +120,7 @@ console.log("The new array length is currently at: " + jobName.length);
 
 console.log("Now we need to track the players and loot request that have been made so far.");
 console.log("Here is a table of the players that have made a request for drops in the turn and what drops they want.")
+//call getJson
 getJson(json);
 
 
