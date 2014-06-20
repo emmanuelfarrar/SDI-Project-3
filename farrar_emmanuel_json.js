@@ -8,20 +8,20 @@ SDI Project 3
 var json = 	{
 		"players": [
 			{
-				"name": "Mannie",
-				"inGameName": "Xeon"
+				"name": "Asuna",
+				"coilDrop": "ring"
 			},
 			{
-				"name": "Dave",
-				"inGameName": "Sheldor"
+				"name": "Tyon",
+				"coilDrop": "Necklace"
 			},
 			{
-				"name": "Rachel",
-				"inGameName": "Terra"
+				"name": "Nesfer",
+				"coilDrop": "ring"
 			},
 			{
-				"name": "Otis",
-				"inGameName": "Trogdar"
+				"name": "Ashara",
+				"coilDrop": "braclet"
 			}
 		]
 	};

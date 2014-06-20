@@ -6,6 +6,11 @@ SDI Project 3
 
 //GLOBAL VARIABLES
 var jobName = ["Paladin", "Warrior", "Dragoon", "Monk", "Ninja", "Summoner", "Black Mage", "White Mage", "Scholar"];
+var weaponArray = ["Novus","Animus", "Relic", "Animus"];
+var loopCounter;
+var numReturn;
+var strReturn;
+var booReturn;
 
 
 //FUNCTIONS
@@ -13,35 +18,47 @@ var jobName = ["Paladin", "Warrior", "Dragoon", "Monk", "Ninja", "Summoner", "Bl
 //procedure to just show the array
 var myProcedure = function (jobArray) 
 {
-	console.log("The array is: " + jobArray);  //list the elements of the array
-	//console.log(jobArray);
+	console.log(jobArray);  //list the elements of the array
+	console.log("The array length is currently at: " + jobArray.length);	
 };
 
 //string function to identify weapon type and if coil turn has been done before.
-var myStrFunction = function (weapon, coil)
+var myStrFunction = function (theArray)
 {
-	//Need to declare local variable, return & use it in MAIN CODE
-	
-	if (weapon === "Novus")
-	{
-		console.log("You have a shiny weapon");
-	}
-	if (weapon === "Animus")
-	{
-		console.log("You still have some work to do.");
-	}
-	
+var wepLength = theArray.length;
+	for (var i = 0; i < theArray.length; i++) 
+{
+	if (theArray[i] === "Relic")
+		{
+		console.log("You only have " + theArray[i]);
+		} else {
+	console.log("You have an awesome weapon" + theArray[i]);
+		}
+}
+	return theArray;
 };
 
+
 //boolean function
-var myBooFuncation = function (youbard)
+var myBooFunction = function (youbard, weapon)
 {
 //make this the nested conditional function
-if (youbard === true)
+ if(youbard === true && weapon === "Novus")
 {
-	myConfirm = confirm("Since you are a bard are you okay with kiting the adds?");
-}
+	var myConfirm = confirm("If you are a bard are you okay with kiting the adds?");
+	
+} else{
+	console.log("It is ashame maybe we can use the Summoner to kite then.");
+	}
+if (weapon != "Novus")
+	{
+	console.log("Well we may have to carry this player doesn't have a very strong weapon.");
+	} else {
+	console.log("You shouldn't slack on DPS since you have your " + weapon +".");
+	}
 	return myConfirm;
+
+	
 };
 
 //number function
@@ -50,20 +67,55 @@ var myNumFunction = function (coilattempts, coilkills)
 var attempts = coilattempts;
 var confirmKill = coilkills;
 
-//add math if not more than 5 confirm kills
 console.log("I see you have attempted this coil turn " +attempts 
 + " and have killed the boss " + confirmKill +" times.");
+
+	if (coilattempts < 5)
+	{
+	attempts = 10 - coilattempts;
+	console.log("We need to have " + attempts +" more attempts to really get the hang of this turn.");
+	} else {
+	console.log("We should have the hang of this by now");
+	
+	};
+	return attempts;
 };
+
+
+
+
+
+//json Function
+var getJson = function (json) {
+		for (var i = 0; i < json.players.length; i++) {
+			var player = json.players[i];
+			console.log(player.name + "; Coil Drop: " + player.coilDrop);
+		};
+	};
+
+
+
+
+
 
 //MAIN CODE
 
-//myProcedure(jobName);   // to test procedure
-myStrFunction("Novus", "Yes");    // to test string function
-myStrFunction("Animus", "Yes");   // to test string function
-myBooFuncation(true);             // to test boolean function
-console.log ("The bard is okay with kitting: " + myConfirm);  //to test return for boolean function
-myNumFunction(10,2);
+myProcedure(jobName);   // to test procedure
 
-//add Bard via push method
+//myStrFunction call
+strReturn = myStrFunction(weaponArray);
 
-//tweak JSON data to reflect weapon, playername, and something else
+//myBooFunction call
+booReturn = myBooFunction(true, "Novus"); 
+
+//myNumFunction call
+numReturn = myNumFunction(3,2);
+
+jobName.push ("Bard");     //add Bard via push method
+console.log(jobName);
+console.log("The new array length is currently at: " + jobName.length);
+console.log("Here is a table of the players that have made a request for drops in the turn and what drops they want.")
+getJson(json);
+
+
+
